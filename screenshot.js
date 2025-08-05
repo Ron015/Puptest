@@ -63,21 +63,21 @@ const data = {
   }
 
   // 📸 Take screenshot after filling
-  await page.screenshot({ path: "filled-form.png", fullPage: true });
+  await page.screenshot({ path: "screenshot.png", fullPage: true });
   console.log("📸 Screenshot saved as filled-form.png");
 
-  // ✅ Auto-submit
-  try {
-    await page.click("#btnSubmit");
-    console.log("🚀 Form submitted!");
-  } catch (e) {
-    console.log("❌ Failed to auto-submit. Submit manually if needed.");
-  }
+  // // ✅ Auto-submit
+  // try {
+    // await page.click("#btnSubmit");
+    // console.log("🚀 Form submitted!");
+  // } catch (e) {
+    // console.log("❌ Failed to auto-submit. Submit manually if needed.");
+  // }
 
-  // 📸 Screenshot after submission
-  await page.waitForTimeout(3000);
-  await page.screenshot({ path: "after-submit.png", fullPage: true });
-  console.log("📸 Screenshot saved as after-submit.png");
+  // // 📸 Screenshot after submission
+  // await page.waitForTimeout(3000);
+  // await page.screenshot({ path: "after-submit.png", fullPage: true });
+  // console.log("📸 Screenshot saved as after-submit.png");
 
   console.log("✅ All fields filled and submitted!");
   await browser.close();
