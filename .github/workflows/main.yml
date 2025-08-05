@@ -1,9 +1,9 @@
 name: Puppeteer Test
 
 on:
-  push:
+  push:                # 👉 Automatically runs on push to main branch
     branches: [ main ]
-  workflow_dispatch:
+  workflow_dispatch:   # 👉 Also allows manual run
 
 jobs:
   puppeteer-test:
@@ -18,10 +18,10 @@ jobs:
         with:
           node-version: 20
 
-      - name: 📦 Install dependencies
+      - name: 📦 Install Puppeteer
         run: npm install puppeteer
 
-      - name: 🧪 Run Puppeteer script
+      - name: 🧪 Run Puppeteer Script
         run: node screenshot.js
 
       - name: 📤 Upload Screenshot Artifact
